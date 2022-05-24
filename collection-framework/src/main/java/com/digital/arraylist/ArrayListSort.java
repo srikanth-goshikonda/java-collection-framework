@@ -2,11 +2,16 @@ package com.digital.arraylist;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class ArrayListSort {
 	public static void main(String[] args) {
 		ArrayList<Integer> list = new ArrayList(Arrays.asList(5, 8, 0, 44, 95, 1));
+
+		// Ascending Order sorting using Collections Class
+		Collections.sort(list);
+		System.out.println(list);
 
 		// Ascending Order sorting using implementation
 		list.sort(new AscendingOrder());
