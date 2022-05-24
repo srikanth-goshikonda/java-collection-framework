@@ -1,6 +1,8 @@
 package com.digital.arraylist;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
 
 public class ArrayListDemo {
 
@@ -27,5 +29,34 @@ public class ArrayListDemo {
 		// remove element from index 2
 		Integer removedElement = list.remove(2);
 		System.out.println("Updated ArrayList: " + list);
+
+		// Returns the length of the arraylist.
+		System.out.println(list.size());
+
+		// Iterate through an Enhanced For Loop
+		System.out.println("==========Iterating using Enhaced For Loop");
+		for (Integer number : list)
+			System.out.print(number + "\t");
+		System.out.println();
+
+		// Iterate through an forEachMethod
+		System.out.println("==========Iterating using forEachMethod");
+		list.stream().forEach(System.out::print);
+		System.out.println();
+
+		// Iterate through an Iterator
+		System.out.println("==========Iterating using Iterator");
+		Iterator<Integer> iterator = list.iterator();
+		while (iterator.hasNext()) {
+			System.out.print(iterator.next() + "\t");
+		}
+		System.out.println();
+
+		// Iterate in reverse order through an List Iterator
+		System.out.println("==========Iterating using List Iterator");
+		ListIterator<Integer> listIterator = list.listIterator(list.size());
+		while (listIterator.hasPrevious()) {
+			System.out.print(listIterator.previous() + "\t");
+		}
 	}
 }
